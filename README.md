@@ -20,8 +20,8 @@ cd /bin
 ## Run the backend micro-services
 See the README.md files inside the each microservices directory:
 
-- ad recording management
-- ad reporting
+- ad_recording_management
+- ad_reporting
 
 
 ## Run API Gateway (Spring Gateway)
@@ -31,11 +31,11 @@ mvn spring-boot:run
 ```
 
 ## Test by API
-- ad recording management
+- ad_recording_management
 ```
  http :8088/adRecordingManagements id="id" 
 ```
-- ad reporting
+- ad_reporting
 ```
  http :8088/reportListManagements id="id" 
 ```

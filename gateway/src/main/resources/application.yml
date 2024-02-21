@@ -9,11 +9,11 @@ spring:
     gateway:
 #<<< API Gateway / Routes
       routes:
-        - id: ad recording management
+        - id: ad_recording_management
           uri: http://localhost:8082
           predicates:
             - Path=/adRecordingManagements/**, 
-        - id: ad reporting
+        - id: ad_reporting
           uri: http://localhost:8083
           predicates:
             - Path=/reportListManagements/**, 
@@ -41,11 +41,11 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: ad recording management
+        - id: ad_recording_management
           uri: http://adRecordingManagement:8080
           predicates:
             - Path=/adRecordingManagements/**, 
-        - id: ad reporting
+        - id: ad_reporting
           uri: http://adReporting:8080
           predicates:
             - Path=/reportListManagements/**, 

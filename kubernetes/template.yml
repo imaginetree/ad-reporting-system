@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ad recording management
+  name: ad_recording_management
   labels:
-    app: ad recording management
+    app: ad_recording_management
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ad recording management
+      app: ad_recording_management
   template:
     metadata:
       labels:
-        app: ad recording management
+        app: ad_recording_management
     spec:
       containers:
-        - name: ad recording management
-          image: username/ad recording management:latest
+        - name: ad_recording_management
+          image: username/ad_recording_management:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -43,22 +43,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ad reporting
+  name: ad_reporting
   labels:
-    app: ad reporting
+    app: ad_reporting
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ad reporting
+      app: ad_reporting
   template:
     metadata:
       labels:
-        app: ad reporting
+        app: ad_reporting
     spec:
       containers:
-        - name: ad reporting
-          image: username/ad reporting:latest
+        - name: ad_reporting
+          image: username/ad_reporting:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -85,15 +85,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ad recording management
+  name: ad_recording_management
   labels:
-    app: ad recording management
+    app: ad_recording_management
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: ad recording management
+    app: ad_recording_management
 
 
 ---
@@ -102,13 +102,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ad reporting
+  name: ad_reporting
   labels:
-    app: ad reporting
+    app: ad_reporting
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: ad reporting
+    app: ad_reporting
 

@@ -29,26 +29,26 @@ jobs:
       
       - name: Build Maven Projects
         run: |
-          mvn clean package -f ./ad recording management/pom.xml
-          mvn clean package -f ./ad reporting/pom.xml
+          mvn clean package -f ./ad_recording_management/pom.xml
+          mvn clean package -f ./ad_reporting/pom.xml
 
       - name: Docker Build and push for AdRecordingManagement
         uses: docker/build-push-action@v4
         with:
-          context: ./ad recording management
+          context: ./ad_recording_management
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/ad-recording-management:latest
-            ghcr.io/${{ github.repository }}/ad-recording-management:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/ad_recording_management:latest
+            ghcr.io/${{ github.repository }}/ad_recording_management:${{ github.ref_name }}
             
       - name: Docker Build and push for AdReporting
         uses: docker/build-push-action@v4
         with:
-          context: ./ad reporting
+          context: ./ad_reporting
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/ad-reporting:latest
-            ghcr.io/${{ github.repository }}/ad-reporting:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/ad_reporting:latest
+            ghcr.io/${{ github.repository }}/ad_reporting:${{ github.ref_name }}
             
